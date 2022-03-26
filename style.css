@@ -37,3 +37,15 @@ button:hover{
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
+.left-versus{
+    margin: 0;
+    
+}
+image{
+    max-width: 20%;
+    max-height: 20%;
+}
+.show-image{
+    height: 16em;
+    width: 10em;
+}
