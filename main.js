@@ -1,53 +1,61 @@
 import * as animeList from "./animeList.js";
+let leftPopularity = document.getElementById("left-popularity");
+let leftTitle = document.getElementById("left-title");
+let leftImageUrl = document.getElementById("left-imageurl");
+let leftEngTitle = document.getElementById("left-engtitle");
+let rightImageUrl = document.getElementById("right-imageurl");
+let rightEngTitle = document.getElementById("right-engtitle");
+let rightTitle = document.getElementById("right-title");
+let rightPopularity = document.getElementById("right-popularity");
+console.log(document.getElementById("higher-button"))
+let higherButton = document.getElementById("higher-button");
+let lowerButton = document.getElementById("lower-button");
+
+const showText = () => {
+  rightPopularity.style.display="initial";
+  higherButton.style.display="none";
+  lowerButton.style.display="none";
+};
+
+higherButton.addEventListener("click", showText);
 
 document.addEventListener("DOMContentLoaded", async () => {
   try {
+    
     let leftAnime;
     animeList.assignAnime().then((data) => {
       leftAnime = data;
-   
-    let p = document.getElementById("left_popularity");
-    p.innerHTML = "Popularity Ranking #" + leftAnime._popularityRanking;
-    console.log(leftAnime._popularityRanking);
 
-    let t = document.getElementById("left_title");
-    t.innerHTML = leftAnime._name;
-    console.log(leftAnime._title);
+      leftPopularity.innerHTML = "#" + leftAnime._popularityRanking;
+      console.log(leftAnime._popularityRanking);
 
-    let i = document.getElementById("left_imageurl");
-    i.src = leftAnime._pictureUrl;
-    console.log(leftAnime._pictureUrl);
+      leftTitle.innerHTML = leftAnime._name;
+      console.log(leftAnime._title);
 
-    let e = document.getElementById("left_engtitle");
-    //if(e=null){e.innerHTML =" "}
-    e.innerHTML = "("+leftAnime._englishName+")";
-    console.log(leftAnime._englishName);
+      leftImageUrl.src = leftAnime._pictureUrl;
+      console.log(leftAnime._pictureUrl);
 
-
+      //if(e=null){e.innerHTML =" "}
+      leftEngTitle.innerHTML = "(" + leftAnime._englishName + ")";
+      console.log(leftAnime._englishName);
     });
     let rightAnime;
     animeList.assignAnime().then((data) => {
       rightAnime = data;
-      
-      // let p = document.getElementById("right_popularity");
-      // p.innerHTML = "#" + rightAnime._popularityRanking;
-      // console.log(rightAnime._popularityRanking);
-  
-      let t = document.getElementById("right_title");
-      t.innerHTML = rightAnime._name;
+
+      rightPopularity.innerHTML = "#" + rightAnime._popularityRanking;
+      console.log(rightAnime._popularityRanking);
+
+      rightTitle.innerHTML = rightAnime._name;
       console.log(rightAnime._title);
-  
-      let i = document.getElementById("right_imageurl");
-      i.src = rightAnime._pictureUrl;
+
+      rightImageUrl.src = rightAnime._pictureUrl;
       console.log(rightAnime._pictureUrl);
 
-      let e = document.getElementById("right_engtitle");
       //if(e=null){e.innerHTML =" "}
-      e.innerHTML = "("+rightAnime._englishName+")";
+      rightEngTitle.innerHTML = "(" + rightAnime._englishName + ")";
       console.log(rightAnime._englishName);
-  
     });
-
   } catch (e) {
     console.log("Error: ");
     console.log(e);

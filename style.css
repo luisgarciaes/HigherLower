@@ -13,6 +13,10 @@
     justify-items: center;
 
 }
+#right-popularity{
+    display: none;
+    
+    }
 .anime-text{
     padding-left: 50px;
     padding-right: 50px;
@@ -54,14 +58,14 @@ button:hover{
     filter: brightness(85%);
     cursor: pointer;
 }
-.higher-button button{
+#higher-button{
     border: none;
     color: white;
     background-color: #6EBF8B;
     padding: 10px;
     margin: 10px;
 }
-.lower-button button{
+#lower-button{
     border: none;
     color: white;
     background-color: #D82148;
@@ -90,3 +94,4 @@ image{
 .show{
     font-size: 25px;
 }
+
