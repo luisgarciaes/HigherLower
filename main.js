@@ -1,21 +1,24 @@
-import * as animeList from './animeList.js'
-let leftAnime;
-let rightAnime;
-document.addEventListener('DOMContentLoaded', async()=>{   
+import * as animeList from "./animeList.js";
+
+document.addEventListener("DOMContentLoaded", async () => {
   try {
-    animeList.assignAnime().then((result) => {
-    leftAnime = result;
-    console.log(leftAnime)
+    let leftAnime;
+    animeList.assignAnime().then((data) => {
+      leftAnime = data;
+   
+    let p = document.getElementById("left_popularity");
+    p.innerHTML = leftAnime._popularityRanking;
+    console.log(leftAnime._popularityRanking);
     });
-    animeList.assignAnime().then((result) => {
-    rightAnime = result;
-    console.log(rightAnime)
+    let rightAnime = animeList.assignAnime();
+    animeList.assignAnime().then((data) => {
+      rightAnime = data;
+      console.log(rightAnime);
     });
-
+    
+    let r;
   } catch (e) {
-    console.log("Error: ")
-    console.log(e)
+    console.log("Error: ");
+    console.log(e);
   }
-})
-
-
+});
