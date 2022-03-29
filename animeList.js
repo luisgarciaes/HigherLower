@@ -26,11 +26,12 @@ const getRandomAnime = async () => {
 // };
 
 export class Anime {
-  constructor(name,pictureUrl,popularityRanking,url){
+  constructor(name,englishName,pictureUrl,popularityRanking,url){
     this._name = name;
     this._pictureUrl = pictureUrl;
     this._popularityRanking = popularityRanking;
     this._url= url;
+    this._englishName = englishName;
   }
 }
 
@@ -38,7 +39,7 @@ export const assignAnime = async () => {
   let a;
   await getRandomAnime().then((data) => {
    let object = data;
-   a = new Anime(object.data.title, object.data.images.webp.large_image_url, object.data.popularity, object.data.url)
+   a = new Anime(object.data.title, object.data.title_english, object.data.images.webp.large_image_url, object.data.popularity, object.data.url)
  });
  return a;
 };
