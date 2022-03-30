@@ -1,36 +1,36 @@
 import * as animeList from "./animeList.js";
-import { initializeApp } from "firebase/app";
+//import { initializeApp } from "firebase/app";
 // Import the functions you need from the SDKs you need
 
-import { getAnalytics } from "firebase/analytics";
+//import { getAnalytics } from "firebase/analytics";
 
 
-// Your web app's Firebase configuration
+// // Your web app's Firebase configuration
 
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
-const firebaseConfig = {
+// const firebaseConfig = {
 
-  apiKey: "AIzaSyAZSAP89rnXUUFnpfMmeOtMj07o0hAFmaM",
+//   apiKey: "AIzaSyAZSAP89rnXUUFnpfMmeOtMj07o0hAFmaM",
 
-  authDomain: "higher-lower-anime.firebaseapp.com",
+//   authDomain: "higher-lower-anime.firebaseapp.com",
 
-  projectId: "higher-lower-anime",
+//   projectId: "higher-lower-anime",
 
-  storageBucket: "higher-lower-anime.appspot.com",
+//   storageBucket: "higher-lower-anime.appspot.com",
 
-  messagingSenderId: "795580983909",
+//   messagingSenderId: "795580983909",
 
-  appId: "1:795580983909:web:c9bb283fbe6a7eda08748c",
+//   appId: "1:795580983909:web:c9bb283fbe6a7eda08748c",
 
-  measurementId: "G-GFGKVEX400"
+//   measurementId: "G-GFGKVEX400"
 
-};
-// Initialize Firebase
+// };
+// // Initialize Firebase
 
-const app = initializeApp(firebaseConfig);
+// const app = initializeApp(firebaseConfig);
 
-const analytics = getAnalytics(app);
+// const analytics = getAnalytics(app);
 
 let leftPopularity = document.getElementById("left-popularity");
 let leftTitle = document.getElementById("left-title");
