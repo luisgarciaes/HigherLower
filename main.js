@@ -7,22 +7,50 @@ let rightImageUrl = document.getElementById("right-imageurl");
 let rightEngTitle = document.getElementById("right-engtitle");
 let rightTitle = document.getElementById("right-title");
 let rightPopularity = document.getElementById("right-popularity");
-console.log(document.getElementById("higher-button"))
 let higherButton = document.getElementById("higher-button");
 let lowerButton = document.getElementById("lower-button");
+let correctText = document.getElementById("correct")
+let wrongText = document.getElementById("wrong")
+let leftAnime;
+let rightAnime;
+let decision;
 
-const showText = () => {
-  rightPopularity.style.display="initial";
-  higherButton.style.display="none";
-  lowerButton.style.display="none";
+const revealAnime = () => {
+  rightPopularity.style.display = "initial";
+  higherButton.style.display = "none";
+  lowerButton.style.display = "none";
 };
-
-higherButton.addEventListener("click", showText);
+const decideWin = () => {
+  if (
+    rightAnime._popularityRanking > leftAnime._popularityRanking &&
+    decision == true
+  ) {
+    console.log("WRONG!");
+    wrongText.style.display = initial;
+  } else if (
+    rightAnime._popularityRanking < leftAnime._popularityRanking &&
+    decision == false
+  ) {
+    console.log("WRONG!");
+    wrongText.style.display = "initial";
+  } else {
+    console.log("RIGHT!");
+    correctText.style.display = "initial";
+  }
+};
+lowerButton.addEventListener("click", function () {
+  decision = false;
+  decideWin();
+  revealAnime();
+});
+higherButton.addEventListener("click", function () {
+  decision = true;
+  decideWin();
+  revealAnime();
+});
 
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-    
-    let leftAnime;
     animeList.assignAnime().then((data) => {
       leftAnime = data;
 
@@ -39,7 +67,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       leftEngTitle.innerHTML = "(" + leftAnime._englishName + ")";
       console.log(leftAnime._englishName);
     });
-    let rightAnime;
+
     animeList.assignAnime().then((data) => {
       rightAnime = data;
 
